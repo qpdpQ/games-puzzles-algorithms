@@ -190,9 +190,9 @@ def next_state(s, cols):
         else:
             m = num_nbrs(s, j, cols, ACH)
             if ch == ACH:
-                new += ACH if m > 1 and m < 4 else DCH
+                new += ACH if m == 4 else DCH
             else:
-                new += ACH if m == 3 else DCH
+                new += ACH if m > 1 and m < 4 else DCH
     return new
 
 
@@ -217,7 +217,7 @@ def interact(max_itn):
 
 
 def main():
-    interact(1200)
+    interact(1)
 
 
 if __name__ == '__main__':
